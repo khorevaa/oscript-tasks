@@ -1,0 +1,12 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "process",
+            "id": "2589757bf46f4a4b3149b17ed2119f07",
+            "problemMatcher": [
+                "$OneScript Linter"
+            ]
+        }
+    ]
+}
