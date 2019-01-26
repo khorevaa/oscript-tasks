@@ -1,11 +1,30 @@
-{
+﻿{
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Создание приложения .exe",
+            "name": "make",
+            "command": "oscript",
             "type": "process",
-            "id": "2589757bf46f4a4b3149b17ed2119f07",
-            "problemMatcher": [
-                "$OneScript Linter"
+            "arg": [
+                "-encoding=utf-8",
+                "-make",
+                ".\/src\/cmd\/tasks.os",
+                ".\/bin\/tasks.exe"
+            ],
+            "options": {
+                "РабочаяОбласть": "${workspace}",
+                "bin": "${workspace}\/bin"
+            }
+        },
+        {
+            "label": "testing",
+            "name": "test",
+            "command": "oscript",
+            "type": "process",
+            "arg": [
+                "-encoding=utf-8",
+                "\/Users\/khorevaa\/Documents\/github\/oscript-tasks\/tasks\/test.os"
             ]
         }
     ]
