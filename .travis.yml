@@ -6,7 +6,7 @@ notifications:
 env:
   global:
   - CHANNEL=dev
-  - PACKAGE_NAME=oscript-tasks
+  - PACKAGE_NAME=tasks
   matrix:
   - OSCRIPT_VERSION=1_0_18
   - OSCRIPT_VERSION=1_0_19
