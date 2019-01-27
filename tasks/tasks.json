@@ -6,7 +6,7 @@
             "name": "make",
             "command": "oscript",
             "type": "process",
-            "arg": [
+            "args": [
                 "-encoding=utf-8",
                 "-make",
                 ".\/src\/cmd\/tasks.os",
@@ -22,9 +22,9 @@
             "name": "test",
             "command": "oscript",
             "type": "process",
-            "arg": [
+            "args": [
                 "-encoding=utf-8",
-                "\/Users\/khorevaa\/Documents\/github\/oscript-tasks\/tasks\/test.os"
+                "tasks\/test.os"
             ]
         }
     ]
