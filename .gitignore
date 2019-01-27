@@ -2,3 +2,4 @@
 *.ospx
 
 coverage/*
+bin/*
