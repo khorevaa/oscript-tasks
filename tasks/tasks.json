@@ -6,6 +6,7 @@
             "name": "make",
             "command": "oscript",
             "type": "process",
+            "redirect-out": true,
             "args": [
                 "-encoding=utf-8",
                 "-make",
