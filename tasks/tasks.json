@@ -6,7 +6,6 @@
             "name": "make",
             "command": "oscript",
             "type": "process",
-            "redirect-out": true,
             "args": [
                 "-encoding=utf-8",
                 "-make",
@@ -19,13 +18,88 @@
             }
         },
         {
-            "label": "testing",
+            "label": "тестирование проекта",
             "name": "test",
             "command": "oscript",
             "type": "process",
-            "args": [
+            "command-args": [
                 "-encoding=utf-8",
                 "tasks\/test.os"
+            ]
+        },
+        {
+            "name": "build-opm",
+            "command": "opm",
+            "type": "process",
+            "args": [
+                "build",
+                "."
+            ],
+            "options": {
+                "РабочаяОбласть": "${workspace}",
+                "bin": "${workspace}\/bin"
+            }
+        },
+        {
+            "name": "build",
+            "command": "oscript",
+            "type": "process",
+            "options": {
+                "РабочаяОбласть": ""
+            },
+            "tasks": [
+                "make",
+                "build-opm"
+            ]
+        },
+        {
+            "name": "deploy",
+            "command": "opm",
+            "type": "process",
+            "args": [
+                "p",
+                "-c",
+                "stable",
+                ".\/tasks.ospx"
+            ],
+            "options": {
+                "РабочаяОбласть": ""
+            }
+        },
+        {
+            "label": "deploy",
+            "name": "deploy-dev",
+            "command": "opm",
+            "type": "process",
+            "args": [
+                "p",
+                "-c",
+                "dev",
+                ".\/tasks.ospx"
+            ],
+            "options": {
+                "РабочаяОбласть": ""
+            },
+            "env": {
+                "HUB": "local-hub.com"
+            }
+        },
+        {
+            "name": "run",
+            "command": "oscript",
+            "type": "process",
+            "args": [
+                "${workspace}/bin/"
+            ],
+            "env": {
+                "HUB": "$LOL"
+            },
+            "options": {
+                "workspace": "${workspace}/${HUB}"
+            },
+            "command-args": [
+                "-encoding=utf-8",
+                "tasks\/run.os"
             ]
         }
     ]
